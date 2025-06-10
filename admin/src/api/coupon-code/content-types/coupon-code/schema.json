@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupon_codes",
+  "info": {
+    "singularName": "coupon-code",
+    "pluralName": "coupon-codes",
+    "displayName": "Coupon_code"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

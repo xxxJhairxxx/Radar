@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_provider_company_details",
+  "info": {
+    "displayName": "Company_detail"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "ruc": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "district_url": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

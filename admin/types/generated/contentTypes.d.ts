@@ -401,6 +401,70 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiClientClient extends Struct.CollectionTypeSchema {
+  collectionName: 'clients';
+  info: {
+    displayName: 'Client';
+    pluralName: 'clients';
+    singularName: 'client';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    birthDate: Schema.Attribute.Date;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dni: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 8;
+      }>;
+    email: Schema.Attribute.Email;
+    full_name: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::client.client'
+    > &
+      Schema.Attribute.Private;
+    password: Schema.Attribute.Password;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    purchaseCount: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCouponCodeCouponCode extends Struct.CollectionTypeSchema {
+  collectionName: 'coupon_codes';
+  info: {
+    displayName: 'Coupon_code';
+    pluralName: 'coupon-codes';
+    singularName: 'coupon-code';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::coupon-code.coupon-code'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCouponCoupon extends Struct.CollectionTypeSchema {
   collectionName: 'coupons';
   info: {
@@ -461,6 +525,41 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProviderProvider extends Struct.CollectionTypeSchema {
+  collectionName: 'providers';
+  info: {
+    displayName: 'Provider';
+    pluralName: 'providers';
+    singularName: 'provider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company_detail: Schema.Attribute.Component<
+      'provider.company-detail',
+      false
+    >;
+    Contact_detail: Schema.Attribute.Component<
+      'contact-details.contact-details',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::provider.provider'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -977,8 +1076,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
+      'api::client.client': ApiClientClient;
+      'api::coupon-code.coupon-code': ApiCouponCodeCouponCode;
       'api::coupon.coupon': ApiCouponCoupon;
       'api::home.home': ApiHomeHome;
+      'api::provider.provider': ApiProviderProvider;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

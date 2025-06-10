@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_details_contact_details",
+  "info": {
+    "displayName": "Contact_details"
+  },
+  "options": {},
+  "attributes": {
+    "contactName": {
+      "type": "string"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "dni": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

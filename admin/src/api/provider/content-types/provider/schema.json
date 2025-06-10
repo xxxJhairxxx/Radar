@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "providers",
+  "info": {
+    "singularName": "provider",
+    "pluralName": "providers",
+    "displayName": "Provider"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Contact_detail": {
+      "type": "component",
+      "component": "contact-details.contact-details",
+      "repeatable": false
+    },
+    "company_detail": {
+      "type": "component",
+      "component": "provider.company-detail",
+      "repeatable": false
+    }
+  }
+}
