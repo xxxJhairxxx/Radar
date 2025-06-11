@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * coupon-code service
+ * promotion service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::coupon-code.coupon-code');
+module.exports = createCoreService('api::promotion.promotion');

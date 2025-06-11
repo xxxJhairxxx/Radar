@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buys",
+  "info": {
+    "singularName": "buy",
+    "pluralName": "buys",
+    "displayName": "Buy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
+    },
+    "coupons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::coupon.coupon"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "methodPayment": {
+      "type": "string"
+    }
+  }
+}

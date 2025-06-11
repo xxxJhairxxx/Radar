@@ -11,44 +11,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "couponCode": {
+      "type": "password"
     },
-    "maxBuy": {
-      "type": "integer"
+    "validate": {
+      "type": "boolean"
     },
-    "summary": {
-      "type": "text"
-    },
-    "clearRules": {
-      "type": "richtext"
-    },
-    "images": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "description": {
-      "type": "richtext"
-    },
-    "price": {
-      "type": "decimal"
-    },
-    "salePrice": {
-      "type": "decimal"
-    },
-    "maxStock": {
-      "type": "integer"
-    },
-    "category": {
+    "promotion": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::category.category"
+      "target": "api::promotion.promotion"
     }
   }
 }
