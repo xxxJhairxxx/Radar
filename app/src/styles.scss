@@ -1,0 +1,27 @@
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: #8bd300
+);
+
+
+.container {
+  max-width: 1400px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.rotate-90  { transform: rotate(90deg); }
+.rotate-180 { transform: rotate(180deg); }
+.rotate-270 { transform: rotate(270deg); }
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.flip-vertical {
+  transform: scaleY(-1);
+}
+
+.btn-primary{
+    background-image: linear-gradient(180deg, #8bd300, #609600);
+    color:#fff
+}
